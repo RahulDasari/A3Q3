@@ -32,7 +32,7 @@ void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<fl
     cudaFree(d_y);
 }
 void gaussian_kde(int n, float h, const std::vector<float>& x, std::vector<float>& y) {
-    gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y);
+    gaussian_kernel(n,  h, x, y);
 } // gaussian_kde
 
 
