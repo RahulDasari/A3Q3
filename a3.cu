@@ -16,7 +16,7 @@ __global__ void compute_kernel(int n, float h, float* x, float* y){
     j = blockIdx.y * blockDim.y + threadIdx.y;
     if (i<n && j<n){
         y[j] += (1/(n*h))*(1/sqrt(2*M_PI)) * exp(-pow((x[i] - x[j])/h ,2 )/2);
-        printf("%d %d \n" y[j] ,(1/(n*h))*(1/sqrt(2*M_PI)) * exp(-pow((x[i] - x[j])/h ,2 )/2) );
+        printf("%d %d \n", y[j] ,(1/(n*h))*(1/sqrt(2*M_PI)) * exp(-pow((x[i] - x[j])/h ,2 )/2) );
     }
 }
 
