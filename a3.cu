@@ -1,7 +1,7 @@
-/* #include"math.h"
-#include <cuda.h>
+#include"math.h"
+/* #include <cuda.h>
 #include "cuda_runtime.h"
-#include "device_launch_parameters.h"
+#include "device_launch_parameters.h" */
 #include <chrono>
 #include <iostream>
 #include <random>
@@ -23,11 +23,10 @@ void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<fl
     cudaMalloc((void**)&d_x, sizeof(float) * n);
     cudaMemcpy(d_x, x.data(), sizeof(float) * n, cudaMemcpyHostToDevice);
     cudaMalloc((void**)&d_y, sizeof(float) * n);
-    cudaMemcpy(d_y, y.data(), sizeof(float) * n, cudaMemcpyHostToDevice);
 
     dim3 num_threads = (1024,1024);
     dim3 blocksize = ((n/1024) + 1,(n/1024)+1);
-    compute_kernel<<blocksize , num_threads>>(n ,h ,d_x, d_y);
+    //compute_kernel<<blocksize , num_threads>>(n ,h ,d_x, d_y);
     cudaMemcpy(y.data(), d_y , sizeof(float) * n, cudaMemcpyHostToDevice);
     cudaFree(d_x);
     cudaFree(d_y);
@@ -76,20 +75,5 @@ int main(int argc, char* argv[]) {
     std::cout << elapsed_par.count() << std::endl;
 
     return 0;
-} // main
- */
-// Kernel definition
-__global__ void MatAdd()
-{
-    int i = threadIdx.x;
-    int j = threadIdx.y;
 }
 
-int main()
-{
-    // Kernel invocation with one block of N * N * 1 threads
-    int numBlocks = 1;
-    dim3 threadsPerBlock(10, 10);
-
-    MatAdd<<<numBlocks, threadsPerBlock>>>();
-}
