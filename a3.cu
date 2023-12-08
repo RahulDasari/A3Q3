@@ -1,8 +1,8 @@
-//#include"math.h"
+#include"math.h"
 /* #include <cuda.h>
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h" */
-/* #include <chrono>
+#include <chrono>
 #include <iostream>
 #include <random>
 #include <vector>
@@ -76,17 +76,19 @@ int main(int argc, char* argv[]) {
     auto t0 = std::chrono::system_clock::now();
 
     gaussian_kde(n, h, x, y);
-
+    for float i : y{
+        std::cout <<" "<< i;
+    }
     auto t1 = std::chrono::system_clock::now();
 
     auto elapsed_par = std::chrono::duration<double>(t1 - t0);
     std::cout << elapsed_par.count() << std::endl;
 
     return 0;
-}  */
+} 
 // main
 
-
+/* 
 #include"math.h"
 #include <chrono>
 #include <iostream>
@@ -100,7 +102,7 @@ __global__ void compute_kernel(int n, float h, float* x, float* y){
     j = blockIdx.y * blockDim.y + threadIdx.y;
     if (i<n && j<n)
         y[j] += (1/(n*h))*(1/sqrt(2*M_PI)) * exp(-pow((x[i] - x[j])/h ,2 )/2);
-
+    
 }
 
 void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y) {
@@ -116,4 +118,4 @@ void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<fl
     cudaMemcpy(y.data(), d_y , sizeof(float) * n, cudaMemcpyHostToDevice);
     cudaFree(d_x);
     cudaFree(d_y);
-}
+} */
