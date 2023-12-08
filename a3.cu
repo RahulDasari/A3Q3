@@ -9,11 +9,9 @@
 #include <functional>
 
 //#include "a3.hpp"
-
-void gaussian_kde(int n, float h, const std::vector<float>& x, std::vector<float>& y) {
-    gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y);
-} // gaussian_kde
-
+compute_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y);
+void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y) ;
+void gaussian_kde(int n, float h, const std::vector<float>& x, std::vector<float>& y);
 __global__ void compute_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y){
     int i,j;
     i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -37,6 +35,10 @@ void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<fl
     cudaFree(d_x);
     cudaFree(d_y);
 }
+void gaussian_kde(int n, float h, const std::vector<float>& x, std::vector<float>& y) {
+    gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y);
+} // gaussian_kde
+
 
 int main(int argc, char* argv[]) {
     if (argc != 3) {
