@@ -71,7 +71,9 @@ int main(int argc, char* argv[]) {
     auto t0 = std::chrono::system_clock::now();
 
     gaussian_kde(n, h, x, y);
-    
+    for (int i = 0; i <n ;i++){
+        std::cout << y[i];
+    }
     auto t1 = std::chrono::system_clock::now();
 
     auto elapsed_par = std::chrono::duration<double>(t1 - t0);
