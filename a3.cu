@@ -6,6 +6,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <functional>
 
 //#include "a3.hpp"
 
