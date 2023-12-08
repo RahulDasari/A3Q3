@@ -33,11 +33,6 @@ void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<fl
     cudaMemcpy(y.data(), d_y , sizeof(float) * n, cudaMemcpyHostToDevice);
     cudaFree(d_x);
     cudaFree(d_y);
-
-    for float i : x{
-        printf("%d" ,i);
-    }
-    
 }
 void gaussian_kde(int n, float h, const std::vector<float>& x, std::vector<float>& y) {
     gaussian_kernel(n, h, x, y);
