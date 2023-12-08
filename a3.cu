@@ -26,7 +26,7 @@ void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<fl
 
     dim3 num_threads = (1024,1024);
     dim3 blocksize = ((n/1024) + 1,(n/1024)+1);
-    //compute_kernel<<blocksize , num_threads>>(n ,h ,d_x, d_y);
+    compute_kernel<<blocksize , num_threads>>(n ,h ,d_x, d_y);
     cudaMemcpy(y.data(), d_y , sizeof(float) * n, cudaMemcpyHostToDevice);
     cudaFree(d_x);
     cudaFree(d_y);
