@@ -10,7 +10,7 @@
 
 //#include "a3.hpp"
 
-__global__ void compute_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y){
+__global__ void compute_kernel(int n, float h, float* x, float* y){
     int i,j;
     i = blockIdx.x * blockDim.x + threadIdx.x;
     j = blockIdx.y * blockDim.y + threadIdx.y;
