@@ -1,4 +1,4 @@
-#include"math.h"
+/* #include"math.h"
 #include <cuda.h>
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
@@ -77,3 +77,19 @@ int main(int argc, char* argv[]) {
 
     return 0;
 } // main
+ */
+// Kernel definition
+__global__ void MatAdd()
+{
+    int i = threadIdx.x;
+    int j = threadIdx.y;
+}
+
+int main()
+{
+    // Kernel invocation with one block of N * N * 1 threads
+    int numBlocks = 1;
+    dim3 threadsPerBlock(10, 10);
+
+    MatAdd<<<numBlocks, threadsPerBlock>>>();
+}
