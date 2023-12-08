@@ -95,12 +95,12 @@ int main(int argc, char* argv[]) {
 #include <functional>
 
 __global__ void compute_kernel(int n, float h, float* x, float* y){
-    int i,j;
+    /* int i,j;
     i = blockIdx.x * blockDim.x + threadIdx.x;
     j = blockIdx.y * blockDim.y + threadIdx.y;
     if (i<n && j<n)
         y[j] += (1/(n*h))*(1/sqrt(2*M_PI)) * exp(-pow((x[i] - x[j])/h ,2 )/2);
-
+ */
 }
 
 void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y) {
