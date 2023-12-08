@@ -9,9 +9,6 @@
 #include <functional>
 
 //#include "a3.hpp"
-compute_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y);
-void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y) ;
-void gaussian_kde(int n, float h, const std::vector<float>& x, std::vector<float>& y);
 __global__ void compute_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y){
     int i,j;
     i = blockIdx.x * blockDim.x + threadIdx.x;
