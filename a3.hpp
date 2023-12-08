@@ -1,8 +1,8 @@
-/*  YOUR_FIRST_NAME
- *  YOUR_LAST_NAME
- *  YOUR_UBIT_NAME
+/*  RAHUL
+ *  DASARI
+ *  rdasari
  */
-
+#include "a3.cu"
 #ifndef A3_HPP
 #define A3_HPP
 #include "a3.cu"
