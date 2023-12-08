@@ -72,7 +72,7 @@ int main(int argc, char* argv[]) {
 
     gaussian_kde(n, h, x, y);
     for (int i = 0; i <n ;i++){
-        std::cout << y[i];
+        std::cout << y[i] << std::endl;
     }
     auto t1 = std::chrono::system_clock::now();
 
