@@ -21,7 +21,8 @@ extern "C" __global__ void compute_kernel(int n, float h, float* x, float* y){
     
 }
 
-void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y) {
+namespace nmspc{
+    void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<float>& y) {
     float * d_x ;
     float * d_y;
     cudaMalloc((void**)&d_x, sizeof(float) * n);
@@ -35,4 +36,6 @@ void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<fl
     cudaFree(d_x);
     cudaFree(d_y);
 }
+}
+
 #endif 
