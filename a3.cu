@@ -9,7 +9,7 @@
 #include <vector>
 #include <algorithm>
 
-#include "a3.cu"
+#include "a3.cuh"
 
 
 extern "C" __global__ void compute_kernel(int n, float h, float* x, float* y){
