@@ -13,7 +13,7 @@
 #include <functional>
 #include "math.h"
 #include "cuda.h"
-#include "cuda_runtime_api.h"
+#include "cuda_runtime.h"
 #include "device_launch_parameters.h"
 
 //#include "a3.hpp"
