@@ -35,3 +35,4 @@ void gaussian_kernel(int n, float h, const std::vector<float>& x, std::vector<fl
     cudaFree(d_x);
     cudaFree(d_y);
 }
+#endif 
