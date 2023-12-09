@@ -1,4 +1,3 @@
-#include"math.h"
 /* #include <cuda.h>
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h" */
@@ -7,6 +6,7 @@
 #include <random>
 #include <vector>
 #include <functional>
+#include"math.h"
 
 //#include "a3.hpp"
 
@@ -71,9 +71,7 @@ int main(int argc, char* argv[]) {
     auto t0 = std::chrono::system_clock::now();
 
     gaussian_kde(n, h, x, y);
-    for (int i = 0; i <n ;i++){
-        std::cout << y[i] << std::endl;
-    }
+
     auto t1 = std::chrono::system_clock::now();
 
     auto elapsed_par = std::chrono::duration<double>(t1 - t0);
