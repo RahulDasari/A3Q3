@@ -11,7 +11,10 @@
 #include <random>
 #include <vector>
 #include <functional>
-#include"math.h"
+#include "math.h"
+#include "cuda.h"
+#include "cuda_runtime_api.h"
+#include "device_launch_parameters.h"
 
 //#include "a3.hpp"
 
