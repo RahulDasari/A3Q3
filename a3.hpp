@@ -10,7 +10,7 @@
 #include <cuda.h>
 #include <cuda_runtime.h>
 #include <cmath>
-#include "a3.cuh"
+#include "a3.cu"
 
 //#include "a3.hpp"
 
